@@ -1,5 +1,7 @@
 export default function Welcome() {
     return (
-        <div></div>
+        <div>
+            Welcome
+        </div>
     )
 }
