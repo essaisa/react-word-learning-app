@@ -1,7 +1,6 @@
 export default function Layout(props){
     const { children } =  props
 
-    console.log(props)
     return (
         <>
             <header>
@@ -10,7 +9,13 @@ export default function Layout(props){
             <main>
                 {children}
             </main>
-            <footer>footer</footer>
+            <footer>
+                <small>Created by</small>
+                <a target="_blank" href="https://github.com/essaisa" className="">  
+                    <p>@essaisa</p>  
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </footer>
         </>
     )
 }
