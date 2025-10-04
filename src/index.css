@@ -1,7 +1,7 @@
 /* GENERAL */
 
 #root{
-    min-width: 100vh;
+    min-height: 100vh;
     max-width: 700px;
     width: 100%;
     margin: 0 auto;
@@ -20,6 +20,25 @@ main{
     flex-direction: column;
     gap: 2rem;
 }
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* WELCOME */
+#welcome {
+    flex: 1;
+    justify-content: center;
+    gap: 2.5rem;
+    padding-top: 1rem;
+}
+
+#welcome svg {
+    height: 25px;
+}
+
 
 /* PORTAL  */
 
@@ -61,3 +80,6 @@ footer a img{
 }
 
 /* MEDIA QUERIES */
+@media (min-width: 640px) {
+
+}
