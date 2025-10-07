@@ -165,6 +165,11 @@
     color: white;
     }
 
+    .special-shadow-2 {
+        text-shadow: -1px -1px 4px #0022ffbf, 2px 2px 10px #0022ffbf, 0 0 20px #0022ffbf;
+        color: rgb(47, 235, 157);
+    }
+
     h2 {
     font-size: 1.25rem;
     line-height: 1.75rem;
