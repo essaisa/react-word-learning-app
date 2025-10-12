@@ -28,7 +28,6 @@ export default function Stats() {
                     <h4> {93.3.toFixed(2)} </h4>
                 </div>
             </div>
-
             <ProgressBar/>
         </div>
     )

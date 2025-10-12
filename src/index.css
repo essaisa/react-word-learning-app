@@ -110,6 +110,26 @@ section {
     background: var(--color-link);
 }
 
+
+.today-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.start-task{
+    max-width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.history-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 /* PORTAL  */
 
 /* FOOTER  */
