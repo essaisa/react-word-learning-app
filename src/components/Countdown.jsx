@@ -17,7 +17,7 @@ export default function Countdown() {
                 </div>
             </div>
 
-            <button className="start-task">
+            <button className="">
                 <h6>Start</h6>
             </button>
             
