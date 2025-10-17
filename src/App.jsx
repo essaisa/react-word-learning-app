@@ -7,7 +7,7 @@ function App() {
 
   // 0 == WELCOME, 1 == DASHBOARD, 2 == CHALLENGE
 
-  const selectedPage = 1
+  const selectedPage = 2
 
   const pages = { 
 
