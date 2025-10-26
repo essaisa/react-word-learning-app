@@ -1,9 +1,15 @@
 import ProgressBar from '../components/ProgressBar'
+import { calcLevel, calculateAccuracy, calculateNewWords } from '../utils'
 
-export default function Stats() {
+export default function Stats(props) {
 
-    const name = "Essa"
-    const day = 10
+    const { name, day, attempts, PLAN }  = props
+
+
+    const currLvl = calcLevel(day)
+    const flooredLvl = Math.floor(currLvl)
+    const remainder = (currLvl - flooredLvl) * 100
+
 
     return (
         <div className="card stats-card">
@@ -21,14 +27,14 @@ export default function Stats() {
                 </div>
                 <div>
                     <p> Words Seen</p>
-                    <h4> {day - 1} </h4>
+                    <h4> {calculateNewWords(day - 1)} </h4>
                 </div>
                 <div>
                     <p> Accuracy (%)</p>
-                    <h4> {93.3.toFixed(2)} </h4>
+                    <h4> {(calculateAccuracy(attempts, day) * 100).toFixed(1)} </h4>
                 </div>
             </div>
-            <ProgressBar/>
+            <ProgressBar text={`lvl ${flooredLvl}`} remainder={remainder}/>
         </div>
     )
     

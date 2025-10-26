@@ -4,12 +4,21 @@ import Welcome from "./components/layouts/Welcome"
 import Challenge from "./components/layouts/Challenge"
 import { useState, useEffect } from "react"
 
+import WORDS from './utils/VOCAB.json'
+import { getWordByIndex, PLAN } from './utils'
+
 function App() {
 
   // 0 == WELCOME, 1 == DASHBOARD, 2 == CHALLENGE
 
   const [selectedPage, setSelectedPage] = useState(0)
-  const [name, setName]= useState('')
+  const [name, setName] = useState('')
+  const [day, setDay] = useState(1)
+  const [datetime, setDatetime] = useState(null)
+  const [history, setHistory] = useState([])
+  const [attempts, setAttempts] = useState(0)
+
+
 
   function handleChangePage(pageIndex){
     setSelectedPage(pageIndex)
@@ -21,8 +30,12 @@ function App() {
     handleChangePage(1)
   }
 
+  const dayWords = PLAN[day].map((idx) => {
+    getWordByIndex(WORDS, idx).word
+  })
+
   useEffect(() => {
-    // this callback is triggered on pageload
+    // this callback is triggered on pageload due to [] in second arg
     if(!localStorage) { return } // if no exit to db, then exit callback function
 
     if (localStorage.getItem('username')) {
@@ -39,7 +52,7 @@ function App() {
   
   const pages = { 
     0: <Welcome name={name} setName={setName} handleCreateAccount={ handleCreateAccount }/>,
-    1: <Dashboard />,
+    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} />,
     2: <Challenge/>
   }
 
