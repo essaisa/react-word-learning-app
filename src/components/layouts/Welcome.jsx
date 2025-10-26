@@ -1,4 +1,7 @@
-export default function Welcome() {
+export default function Welcome(props) {
+
+    const { name, setName, handleCreateAccount } = props
+
     return (
         <section id="welcome">
             <h3 className="text-large special-shadow">
@@ -12,9 +15,11 @@ export default function Welcome() {
             </h6>
 
             <div>
-                <input type="text" placeholder="Enter your name..." />
+                <input value={name} onChange={(evt) => {   
+                    setName(evt.target.value)
+                }}  type="text" placeholder="Enter your name..." />
                 <br/>
-                <button>
+                <button disabled={!name} onClick={handleCreateAccount}>
                     <h6> Start &rarr; </h6>
                 </button>
             </div>
