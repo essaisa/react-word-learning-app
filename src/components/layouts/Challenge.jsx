@@ -1,9 +1,11 @@
 import ProgressBar from "../ProgressBar"
 
-export default function Challenge(){
+export default function Challenge(props){
 
-    const word = 'Eden Hazard'
-    const defintion = 'Who had the Most G/A in the 18/19 PL season?'
+    const { handleChangePage } = props
+
+    const word = 'lugubrious'
+    const defintion = 'Excessively mournful or gloomy'
     return (
         <section id="challenge">
             <h3 className="special-shadow-3">Challenge</h3>
@@ -23,7 +25,7 @@ export default function Challenge(){
             </div>
 
                 <div className="challenge-btns">
-                    <button className="card-button-secondary">
+                    <button className="card-button-secondary" onClick={() => {handleChangePage(1)}}>
                         <h6>Quit</h6>
                     </button>
                     <button className="card-button-primary">

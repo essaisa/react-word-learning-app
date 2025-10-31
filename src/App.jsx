@@ -30,13 +30,13 @@ function App() {
     handleChangePage(1)
   }
 
-  const dayWords = PLAN[day].map((idx) => {
+  const daysWords = PLAN[day].map((idx) => {
     getWordByIndex(WORDS, idx).word
   })
 
   useEffect(() => {
     // this callback is triggered on pageload due to [] in second arg
-    if(!localStorage) { return } // if no exit to db, then exit callback function
+    if (!localStorage) { return } // if no exit to db, then exit callback function
 
     if (localStorage.getItem('username')) {
       // if we find something, then enter if block
@@ -52,8 +52,8 @@ function App() {
   
   const pages = { 
     0: <Welcome name={name} setName={setName} handleCreateAccount={ handleCreateAccount }/>,
-    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} />,
-    2: <Challenge/>
+    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} />,
+    2: <Challenge handleChangePage={ handleChangePage }/>
   }
 
   return (

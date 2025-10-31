@@ -4,7 +4,7 @@ export default function Layout(props){
     return (
         <>
             <header>
-                <h1 className="text-gradient">Ball Knowledge</h1>
+                <h1 className="text-gradient">Word Knowledge</h1>
             </header>
             <main>
                 {children}

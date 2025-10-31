@@ -8,8 +8,8 @@ export default function Dashboard(props){
             <section id="dashboard">
                 <h3 className="special-shadow-2">Dashboard</h3>
                 <Stats {...props}/>
-                <Countdown/>
-                <History/>
+                <Countdown {...props}/>
+                <History {...props}/>
             </section>
         </div>
     )
