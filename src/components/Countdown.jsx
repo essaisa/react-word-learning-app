@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { convertMilliseconds, countdownIn24Hours } from "../utils"
 
 export default function Countdown(props) {
@@ -9,6 +9,13 @@ export default function Countdown(props) {
 
     const [remainingMs, setRemainingMs] = useState(countdownIn24Hours(targetMillis))
     const timer = convertMilliseconds(remainingMs)
+
+    useEffect(() => {
+        const interval = setInterval(() => { 
+            setRemainingMs(countdownIn24Hours(targetMillis))
+        },  1000)
+        return () => clearInterval(interval)
+    }, [targetMillis])
 
 
     
